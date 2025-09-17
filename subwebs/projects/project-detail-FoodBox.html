@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodbox.to - Mutual-Aid Initiative</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+            background-color: #111827; /* Matched dark background */
+        }
+        .content-section h3 {
+            font-size: 1.75rem; /* 28px */
+            font-weight: bold;
+            color: #758cff; /* Light purple for subtitles */
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #374151;
+        }
+        
+        /* Carousel container styling */
+        .filmstrip-carousel {
+            height: 70vh; /* Increased height for better view on a detail page */
+            min-height: 350px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .carousel-track {
+            position: relative;
+            width: 50vh;
+            max-width: 90%;
+            aspect-ratio: 4 / 3;
+        }
+
+        .carousel-item {
+            position: absolute;
+            inset: 0;              /* stick to edges */
+            display: flex;         /* ✅ so image can be centered inside */
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.5s ease, opacity 0.5s ease, z-index 0.5s;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            border-radius: 1rem;
+            filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.4));
+        }
+
+        /* State styles for carousel items */
+        .carousel-item.active {
+            transform: translateX(0) scale(1);
+            opacity: 1;
+            z-index: 10;
+        }
+
+        .carousel-item.prev {
+            transform: translateX(-55%) scale(0.8);
+            opacity: 0.7;
+            z-index: 5;
+        }
+
+        .carousel-item.next {
+            transform: translateX(55%) scale(0.8);
+            opacity: 0.7;
+            z-index: 5;
+        }
+        
+        .carousel-item:not(.active):not(.prev):not(.next) {
+            transform: scale(0.5);
+            opacity: 0;
+            z-index: 1;
+        }
+
+        /* Navigation buttons for the carousel */
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.4);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 20;
+            transition: background-color 0.3s ease;
+        }
+        .carousel-btn:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        .carousel-btn-prev { left: -60px; }
+        .carousel-btn-next { right: -60px; }
+        
+        @media (max-width: 768px) {
+            .carousel-btn-prev { left: -20px; }
+            .carousel-btn-next { right: -20px; }
+        }
+    </style>
+</head>
+<div></div>
+<body class="text-white">
+
+    <!-- Language Switcher Button -->
+    <button id="lang-switcher" class="fixed top-4 right-4 z-50 bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-lg shadow-lg hover:bg-white/30 transition-colors duration-300">
+        Traduci in Italiano
+    </button>
+
+    <div class="container mx-auto px-4 py-12 max-w-5xl">
+
+        <!-- Header Section -->
+        <header class="text-center mb-12">
+             <h1 class="text-4xl md:text-5xl font-bold text-[#fdf8ea]" data-lang-en="Foodbox.to <div></div> A Mutual-Aid Initiative in Toronto" data-lang-zh="Foodbox.to <div></div> Un Aiuto Reciproco Contro la Fame">Foodbox.to <div></div> A Mutual-Aid Initiative in Toronto</h1>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Project Overview Section -->
+            <section class="content-section mb-12">
+                <div class="bg-gray-800 p-8 rounded-lg shadow-lg">
+                    <h3 class="mt-0" data-lang-en="Core Issue" data-lang-zh="Il Problema Principale">Core Issue</h3>
+                    <p class="text-gray-300 leading-relaxed mt-0" data-lang-en="The Foodbox is a public food pantry and mutual aid initiative conceptualized and built by me with the help of the Impact Skateboard Club Youth Council. The idea of making pantries came to me after visiting a homeless encampment at Trinity Bellwoods Park in 2021 along with the Youth Council. As we handed out care-packages I got to know the residents and realized the severity of the financial stress from the pandemic. We agreed that a food pantry would benefit the community." data-lang-zh="Foodbox.to è una dispensa alimentare pubblica e un'iniziativa di mutuo soccorso ideata e realizzata da me con l'aiuto dell'Impact Skateboard Club Youth Council. L'idea di realizzare delle dispense mi è venuta dopo aver visitato un accampamento di senzatetto al Trinity Bellwoods Park nel 2021 insieme al Youth Council. Mentre distribuivamo i pacchi di soccorso, ho avuto modo di conoscere i residenti e di rendermi conto della gravità dello stress finanziario causato dalla pandemia. Eravamo d'accordo che una dispensa alimentare avrebbe portato benefici alla comunità.">
+                        The Foodbox is a public food pantry and mutual aid initiative conceptualized and built by me with the help of the Impact Skateboard Club Youth Council. The idea of making pantries came to me after visiting a homeless encampment at Trinity Bellwoods Park in 2021 along with the Youth Council. As we handed out care-packages I got to know the residents and realized the severity of the financial stress from the pandemic. We agreed that a food pantry would benefit the community.
+                    </p>
+                </div>
+            </section>
+            
+            <section class="content-section mb-12">
+                <div class="bg-gray-800 p-8 rounded-lg shadow-lg">
+                    <p class="text-gray-300 leading-relaxed" data-lang-en="I built the pantries with wooden 2x4's and plywood, and decorated them with hand-painted vegetables on skateboards! The Youth Council created an Instagram to promote them (@foodbox.to), and they were generously hosted by several restaurants for the coming years. <br><br> People regularly donated non-perishables which were then taken by people in need, and the cycle continued. Seeing how something I built allowed people to help others or be helped was a powerful feeling. The FoodBox was the first big woodworking project I had ever made, and it taught me a lot about furniture building, which I do a lot of now. " data-lang-zh="Ho costruito le dispense con assi di legno 2x4, e le ho decorate con verdure dipinte a mano sugli skateboard! Per promuoverli, il Youth Council ha creato un profilo Instagram (@foodbox.to) e nei prossimi anni i FoodBox sono stati generosamente ospitati da diversi ristoranti. <br><br> Le persone donavano regolarmente alimenti che venivano poi presi dalle persone bisognose, e il ciclo continuava. Vedere come qualcosa che ho costruito permettesse alle persone di aiutare gli altri o di essere aiutate è stata una sensazione potente. FoodBox.to è stato il primo grande progetto di lavorazione del legno che abbia mai realizzato e mi ha insegnato molto sulla costruzione di mobili, attività che svolgo molto anche adesso.">
+                       I built the pantries with wooden 2x4's and plywood, and decorated them with hand-painted vegetables on skateboards! The Youth Council created an Instagram to promote them (@foodbox.to), and they were generously hosted by several restaurants for the coming years. <br><br> People regularly donated non-perishables which were then taken by people in need, and the cycle continued. Seeing how something I built allowed people to help others or be helped was a powerful feeling. The FoodBox was the first big woodworking project I had ever made, and it taught me a lot about furniture building, which I do a lot of now. 
+
+                    </p>
+                </div>
+            </section>
+            
+            <!-- Image Gallery Carousel -->
+            <section class="content-section mb-12">
+                 <h3 data-lang-en="Gallery" data-lang-zh="Galleria">Gallery</h3>
+                 <div class="filmstrip-carousel">
+                    <div class="carousel-track">
+                        <!-- Carousel items will be injected here by JavaScript -->
+                    </div>
+                    <button class="carousel-btn carousel-btn-prev">&lt;</button>
+                    <button class="carousel-btn carousel-btn-next">&gt;</button>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer with Back Button -->
+        <footer class="text-center mt-16">
+            <a href="../projects.html" class="inline-block bg-[#fdf8ea] hover:bg-[#ded7c3] text-gray-950 font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105" data-lang-en="&larr; Back to All Projects" data-lang-zh="&larr; Ritorna ai Progetti">
+                &larr; Back to All Projects
+            </a>
+            <p class="text-gray-500 text-sm mt-4">&copy; 2025 Livia Welch. All Rights Reserved.</p>
+        </footer>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- Carousel Data ---
+            const galleryImages = [
+                { src: '../../photos/Project3FoodBox/IMG_2733.jpg', alt: 'Presentation Photo 1' },
+                { src: '../../photos/Project3FoodBox/IMG_5183.jpg', alt: 'Presentation Photo 2' },
+                { src: '../../photos/Project3FoodBox/64503775842__304D26B3-2116-451E-BB20-B02E74B58D01.jpg', alt: 'Model Photo 1' },
+                { src: '../../photos/Project3FoodBox/2EF061D0-7361-4C44-B1F2-A9DA0A17C9F1.jpg', alt: 'Photo 2' },
+                { src: '../../photos/Project3FoodBox/IMG_9549.jpg', alt: 'Highest Score Photo' },
+                { src: '../../photos/Project3FoodBox/8E00AFA1-1449-4A43-B9EA-62691070601C.jpg', alt: 'Highest Score Photo' }
+            ];
+
+            // --- Carousel Logic ---
+            const carouselContainer = document.querySelector('.filmstrip-carousel');
+            const carouselTrack = carouselContainer.querySelector('.carousel-track');
+            let currentIndex = 0;
+            let autoScrollInterval;
+
+            galleryImages.forEach(image => {
+                const item = document.createElement('div');
+                item.className = 'carousel-item';
+                item.innerHTML = `<img src="${image.src}" alt="${image.alt}">`;
+                carouselTrack.appendChild(item);
+            });
+            
+            const carouselItems = carouselTrack.querySelectorAll('.carousel-item');
+
+            function updateCarousel() {
+                carouselItems.forEach((item, index) => {
+                    item.classList.remove('active', 'prev', 'next');
+                    if (index === currentIndex) item.classList.add('active');
+                    else if (index === (currentIndex - 1 + galleryImages.length) % galleryImages.length) item.classList.add('prev');
+                    else if (index === (currentIndex + 1) % galleryImages.length) item.classList.add('next');
+                });
+            }
+
+            function showNext() {
+                currentIndex = (currentIndex + 1) % galleryImages.length;
+                updateCarousel();
+            }
+
+            function showPrev() {
+                currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+                updateCarousel();
+            }
+            
+            function startAutoScroll() {
+                clearInterval(autoScrollInterval); 
+                autoScrollInterval = setInterval(showNext, 3500);
+            }
+            
+            // Event listeners for manual navigation
+            carouselContainer.querySelector('.carousel-btn-next').addEventListener('click', () => { showNext(); startAutoScroll(); });
+            carouselContainer.querySelector('.carousel-btn-prev').addEventListener('click', () => { showPrev(); startAutoScroll(); });
+
+            // Initialize carousel
+            updateCarousel();
+            startAutoScroll(); // Start the non-stop scrolling
+
+            // --- Language Switching Logic ---
+            const langSwitcher = document.getElementById('lang-switcher');
+            const translatableElements = document.querySelectorAll('[data-lang-en]');
+            let currentLang = 'en';
+
+            function switchLanguage() {
+                currentLang = (currentLang === 'en') ? 'zh' : 'en';
+                langSwitcher.textContent = (currentLang === 'en') ? 'Traduci in Italiano' : 'Switch to English';
+                document.documentElement.lang = (currentLang === 'en') ? 'en-US' : 'zh-CN';
+
+                translatableElements.forEach(element => {
+                    const text = element.dataset[currentLang === 'en' ? 'langEn' : 'langZh'];
+                    element.innerHTML = text; 
+                });
+            }
+            langSwitcher.addEventListener('click', switchLanguage);
+        });
+    </script>
+</body>
+</html>

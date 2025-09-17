@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LivinStudios Pottery Business</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+            background-color: #111827; /* Matched dark background */
+        }
+        .content-section h3 {
+            font-size: 1.75rem; /* 28px */
+            font-weight: bold;
+            color: #758cff; /* Light purple for subtitles */
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #374151;
+        }
+    </style>
+</head>
+<body class="text-white">
+
+    <!-- Language Switcher Button -->
+    <button id="lang-switcher" class="fixed top-4 right-4 z-50 bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-lg shadow-lg hover:bg-white/30 transition-colors duration-300">
+        Traduci in Italiano
+    </button>
+
+    <div class="container mx-auto px-4 py-12 max-w-5xl">
+
+        <!-- Header Section -->
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-white" data-lang-en="LivinStudios: My Small Pottery Business" data-lang-zh="LivinStudios: La Mia Piccola Impresa">LivinStudios: My Small Pottery Business</h1>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Project Overview Section -->
+            <section class="content-section mb-12">
+                <div class="bg-gray-800 p-8 rounded-lg shadow-lg">
+                    <p class="text-gray-300 leading-relaxed" data-lang-en="A small ceramics business I founded in the 10th grade with the intention of not only selling my pieces, but also connecting with the pottery community. I hand-make all kinds of ceramic objects from an endless quantity of mugs, to spoon-rests, and even teapots. Most of my work is sold through custom commissions and farmers markets. <br><br> Beyond being a business, it is a platform for me to share my passion. Much of my work has been driven by personal exploration—projects that I find exciting or meaningful, such as making 25 trophies for a local boating competition or creating a memorial vase for a friend who passed away. The business has been a way to connect with my community and share something that I am passionate about." data-lang-zh="Una piccola impresa di ceramica che ho fondato al 2° anno di liceo con l'intenzione non solo di vendere i miei pezzi, ma anche di entrare in contatto con la comunità della ceramica. Realizzo a mano tutti i tipi di oggetti in ceramica, da una quantità infinita di tazze, a poggiacucchiai e persino teiere. La maggior parte dei miei lavori viene venduta tramite commissioni personalizzate e mercati agricoli. <br><br> Oltre a essere un'azienda, è una piattaforma in cui posso condividere la mia passione. Gran parte del mio lavoro è stato guidato dall'esplorazione personale—progetti che trovo entusiasmanti o significativi, come realizzare 25 trofei per una gara nautica locale o creare un vaso commemorativo per un amico scomparso. L'impresa è un modo per entrare in contatto con la mia comunità e condividere qualcosa che mi appassiona.">
+                        A small ceramics business I founded in the 10th grade with the intention of not only selling my pieces, but also connecting with the pottery community. I hand-make all kinds of ceramic objects from an endless quantity of mugs, to spoon-rests, and even teapots. Most of my work is sold through custom commissions and farmers markets. <br><br> Beyond being a business, it is a platform for me to share my passion. Much of my work has been driven by personal exploration—projects that I find exciting or meaningful, such as making 25 trophies for a local boating competition or creating a memorial vase for a friend who passed away. The business has been a way to connect with my community and share something that I am passionate about.
+
+                    </p>
+                </div>
+            </section>
+            
+            <!-- Image Gallery -->
+            <section class="content-section mb-12">
+                 <h3 data-lang-en="Gallery" data-lang-zh="Galleria">Gallery</h3>
+                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Replace these placeholder links with your actual image files -->
+                    <img src="../../photos/Livinstudios/IMG_8642.jpg" alt="Overall view of the prototype" class="rounded-lg shadow-md w-full h-full object-cover">
+                    <img src="../../photos/Livinstudios/IMG_2383.jpg" alt="Overall view of the prototype" class="rounded-lg shadow-md w-full h-full object-cover">
+                    <img src="../../photos/Livinstudios/IMG_4331.jpg" alt="Close-up of the robotic arm" class="rounded-lg shadow-md w-full h-full object-cover">
+                    <img src="../../photos/Livinstudios/IMG_4538.jpg" alt="3D CAD Model" class="rounded-lg shadow-md w-full h-full object-cover">
+                    <img src="../../photos/Livinstudios/IMG_6708.jpg" alt="User control interface" class="rounded-lg shadow-md w-full h-full object-cover">
+                    <img src="../../photos/Livinstudios/IMG_8123.jpg" alt="Overall view of the prototype" class="rounded-lg shadow-md w-full h-full object-cover">
+                 </div>
+                </section>
+
+
+    
+
+        <!-- Footer with Back Button -->
+        <footer class="text-center mt-16">
+            <!-- This link goes back to the projects page -->
+            <a href="../projects.html" class="inline-block bg-[#fdf8ea] hover:bg-[#ded7c3] text-gray-950 font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105" data-lang-en="&larr; Back to All Projects" data-lang-zh="&larr; Ritorna ai Progetti">
+                &larr; Back to All Projects
+            </a>
+            <p class="text-gray-500 text-sm mt-4">&copy; 2025 Livia Welch. All Rights Reserved.</p>
+        </footer>
+
+    </div>
+    
+    <script>
+        // --- Language Switching Logic ---
+        const langSwitcher = document.getElementById('lang-switcher');
+        // Select all elements that have language data attributes
+        const translatableElements = document.querySelectorAll('[data-lang-en]');
+        let currentLang = 'en'; // 'en' is the default
+
+        langSwitcher.addEventListener('click', () => {
+            // Determine the new language
+            currentLang = (currentLang === 'en') ? 'zh' : 'en';
+
+            // Update the button text
+            langSwitcher.textContent = (currentLang === 'en') ? 'Traduci in Italiano' : 'Switch to English';
+            
+            // Update the root lang attribute for accessibility
+            document.documentElement.lang = (currentLang === 'en') ? 'en-US' : 'zh-CN';
+
+            // Iterate over all translatable elements and update their text
+            translatableElements.forEach(element => {
+                const text = element.dataset[currentLang === 'en' ? 'langEn' : 'langZh'];
+                // Use innerHTML to correctly render <br> tags and other HTML
+                element.innerHTML = text; 
+            });
+        });
+    </script>
+</body>
+</html>
